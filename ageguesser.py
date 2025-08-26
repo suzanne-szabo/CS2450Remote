@@ -12,7 +12,7 @@ def main():
 
     while True:
         if guess_count >= 5:
-            print("I give up! I couldn't guess your age.")
+            print(f"I give up! Sorry I couldn't guess your age, {name}.")
             break
         guess = random.choice(guesses)
         response= input((f"Are you {guess} years old? y or n: "))
