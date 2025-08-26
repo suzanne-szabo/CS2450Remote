@@ -9,7 +9,7 @@ def main():
 
     while True:
         guess = random.randint(15, 30)
-        response= int(input((f"Are you {guess} years old? y or n: ")))
+        response= input((f"Are you {guess} years old? y or n: "))
 
         if response == 'y':
             print(f"{name} is {guess} years old! Yay!")
@@ -18,3 +18,5 @@ def main():
             print("Rats.")
         else: 
             print("Please respond with 'y' or 'n'.")
+
+main()
