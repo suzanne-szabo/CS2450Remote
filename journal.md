@@ -4,7 +4,11 @@ Suzanne's Engineering Journal
 Stardate 25.27.8
     We are working in class today on getting git installed, but I already did the assignments, not knowing that we were going to work on them in class. I built a fun little age guesser program. I tried to make it efficent and effective in the shortest amount of time possible, and it worked well. I want continue to work more in vs code with sticking to keyboard commands only and have little to no mouse use when writing code, and to continue to learn vim keybinds. I didn't write in vim, but this was a small enough project- maybe I should have. I feel pretty comfortable with the basics of git, and I look forward to learning more about the production part-checkouts, merge conficts and resolutions, etc. 
 
-
-
 Stardate 25.22.9
     Wow, I have not kept up on this journal at all for the past nearly 3 weeks. I have learned some very very valuable things in these three week though, so I can summarize. We have worked on and built user stories as well as diagraming the flow of our site as well as a component diagram. Both of those were incredibly helpful in getting down into the specifics of who our audience is, what they might need and how we can take that information and form usable bits to fulfil those needs, as well as an estimation of how big a job it might be to work on those bits. This week, we are learning about presentations because we will pitch our projects next week. 
+
+Stardate 25.26.9
+    I used things we learned about branching this week! In Node Campus Tour I need a place to "play" and try out some different functinality and styling, so I created a for real branch that Pace can access and test. Yay!! I fully see the value. I don't want to disturb the working code, so the branching solution is really great. If we intend to keep some or all of the changes, we can merge them to the main branch, but for now, its great to be able to use branching to test out changes. 
+
+Stardatr 25.29.9
+    We worked together all of last week on our presentation. All of us contributed to building the slides overall, but I did the UI mockup and logo specifically. It was interesting working in a team dynamic with creating slides or doing anything creative, because choices in working together to build a good presentation feel a bit subjective at times. For me, it was less pleasant to use Figma and easier to actually build a mockup site, so for better or worse, that is what I did. It really helped me to fine tune our vision for the site, but I'm not sure how much we can use. My next step is to find out how to work with the front end using flask and what is already in the repo. 

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mySpy | Grid Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --tron-cyan: #0AFFFF;
+            --tron-red: #FF003C;
+            --tron-bg: #000000;
+            --tron-glow: 0 0 5px var(--tron-cyan), 0 0 10px var(--tron-cyan), 0 0 20px var(--tron-cyan);
+            --tron-glow-red: 0 0 5px var(--tron-red), 0 0 10px var(--tron-red);
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--tron-bg);
+            color: #E0E0E0;
+            background-image: 
+                linear-gradient(rgba(10, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+        }
+        .main-content { display: none; }
+        .main-content.active { display: block; }
+
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            text-shadow: 0 0 2px rgba(10, 255, 255, 0.5);
+        }
+        .nav-link.active, .nav-link:hover {
+            color: var(--tron-cyan);
+            background-color: rgba(10, 255, 255, 0.05);
+            box-shadow: inset 0 0 8px rgba(10, 255, 255, 0.3), 0 0 10px rgba(10, 255, 255, 0.3);
+            text-shadow: var(--tron-glow);
+        }
+        .tron-border {
+            border: 1px solid rgba(10, 255, 255, 0.3);
+            box-shadow: 0 0 8px rgba(10, 255, 255, 0.2);
+        }
+        .tron-button {
+            background-color: transparent;
+            border: 1px solid var(--tron-cyan);
+            color: var(--tron-cyan);
+            box-shadow: var(--tron-glow);
+            transition: all 0.2s ease;
+        }
+        .tron-button:hover {
+            background-color: rgba(10, 255, 255, 0.2);
+            box-shadow: 0 0 8px var(--tron-cyan), 0 0 15px var(--tron-cyan), 0 0 25px var(--tron-cyan);
+        }
+        .text-glow {
+             color: var(--tron-cyan);
+        }
+         .text-glow-red {
+             color: var(--tron-red);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--tron-bg); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--tron-cyan);
+            box-shadow: var(--tron-glow);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <div class="flex flex-col md:flex-row min-h-screen bg-black/80 backdrop-blur-sm">
+        <!-- Sidebar / Navigation -->
+        <aside class="w-full md:w-64 bg-black/50 border-b md:border-b-0 md:border-r border-cyan-400/20 flex-shrink-0">
+            <div class="p-4 flex items-center justify-center h-48 border-b border-cyan-400/20">
+                <!-- PNG Logo -->
+                <img src="myspylogo.jpg" alt="mySpy Logo" class="h-full w-auto">
+            </div>
+            <nav class="p-4 space-y-2">
+                <a href="#home" class="nav-link active flex items-center px-4 py-2.5 text-sm rounded-lg">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                    AGENT FEED
+                </a>
+                <a href="#jobs" class="nav-link flex items-center px-4 py-2.5 text-sm rounded-lg">
+                     <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                    ASSIGNMENTS
+                </a>
+                <a href="#messages" class="nav-link flex items-center px-4 py-2.5 text-sm rounded-lg">
+                     <i data-lucide="message-square" class="w-5 h-5 mr-3"></i>
+                    SECURE CHANNEL
+                </a>
+                <a href="#profile" class="nav-link flex items-center px-4 py-2.5 text-sm rounded-lg">
+                     <i data-lucide="user-circle" class="w-5 h-5 mr-3"></i>
+                    USER PROFILE
+                </a>
+            </nav>
+        </aside>
+
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+
+            <!-- Home / Agent Feed -->
+            <div id="home" class="main-content active">
+                <h2 class="text-3xl font-bold text-glow mb-6">AGENT FEED</h2>
+
+                <!-- New Post Input -->
+                <div class="bg-black/70 p-4 rounded-lg mb-6 tron-border">
+                    <textarea class="w-full bg-black/50 p-3 rounded-md placeholder-cyan-200/50 focus:outline-none focus:ring-1 ring-cyan-400" rows="3" placeholder="> Enter intel..."></textarea>
+                    <div class="flex justify-end mt-3">
+                        <button class="tron-button font-bold py-2 px-4 rounded-lg flex items-center">
+                            <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                            TRANSMIT
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Agent Posts -->
+                <div class="space-y-6">
+                    <!-- Post 1 -->
+                    <div class="bg-black/70 p-5 rounded-lg tron-border">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/40x40/000000/0AFFFF?text=S" alt="Agent Avatar" class="w-10 h-10 rounded-full mr-4" style="box-shadow: var(--tron-glow)">
+                            <div>
+                                <p class="font-semibold text-white text-glow">AGENT: SHADOW</p>
+                                <p class="text-xs text-cyan-400/70">252002Z SEP25</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">> Data confirmed. Asset traversing Sector 7. All agents in range be advised. Protocol Nightfall is executable. Discretion is priority. End communication.</p>
+                        <div class="mt-4 flex items-center space-x-6 text-cyan-400/70">
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="thumbs-up" class="w-4 h-4 mr-2"></i> Acknowledge</button>
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> Respond</button>
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="share-2" class="w-4 h-4 mr-2"></i> Replicate</button>
+                        </div>
+                    </div>
+                     <!-- Post 2 -->
+                    <div class="bg-black/70 p-5 rounded-lg tron-border">
+                        <div class="flex items-center mb-4">
+                           <img src="https://placehold.co/40x40/000000/0AFFFF?text=G" alt="Agent Avatar" class="w-10 h-10 rounded-full mr-4" style="box-shadow: var(--tron-glow)">
+                            <div>
+                                <p class="font-semibold text-white text-glow">AGENT: GHOST</p>
+                                <p class="text-xs text-cyan-400/70">251830Z SEP25</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">> Package secured. Extraction point corrupt. Requesting new vector via grid reference Delta-9. Awaiting instructions. High-level resistance detected.</p>
+                         <div class="mt-4 flex items-center space-x-6 text-cyan-400/70">
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="thumbs-up" class="w-4 h-4 mr-2"></i> Acknowledge</button>
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> Respond</button>
+                           <button class="flex items-center hover:text-cyan-300 transition"><i data-lucide="share-2" class="w-4 h-4 mr-2"></i> Replicate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs / Assignments -->
+            <div id="jobs" class="main-content">
+                <h2 class="text-3xl font-bold text-glow mb-6">AVAILABLE DIRECTIVES</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Job 1 -->
+                    <div class="bg-black/70 rounded-lg p-5 tron-border flex flex-col justify-between hover:border-cyan-300 transition hover:shadow-lg" style="--shadow-color: var(--tron-cyan)">
+                        <div>
+                            <h3 class="font-bold text-xl text-white text-glow">Directive: Nightfall</h3>
+                            <p class="text-sm text-cyan-400/70 mb-2">GRID LOCATION: Undisclosed, EU Sector</p>
+                            <span class="inline-block bg-red-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full text-glow-red">THREAT: HIGH</span>
+                            <p class="text-gray-300 mt-4">> Infiltrate target base and retrieve data logs. Stealth and exploit skills required. Solo mission.</p>
+                        </div>
+                        <button class="w-full tron-button font-bold py-2 px-4 rounded-lg mt-4">VIEW DETAILS</button>
+                    </div>
+                     <!-- Job 2 -->
+                    <div class="bg-black/70 rounded-lg p-5 tron-border flex flex-col justify-between hover:border-cyan-300 transition">
+                        <div>
+                            <h3 class="font-bold text-xl text-white text-glow">Directive: Chimera</h3>
+                            <p class="text-sm text-cyan-400/70 mb-2">GRID LOCATION: East Asia</p>
+                            <span class="inline-block bg-yellow-500 text-black text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">THREAT: MODERATE</span>
+                            <p class="text-gray-300 mt-4">> Conduct long-range surveillance on a target. Data capture and identity masking essential. Dual mission.</p>
+                        </div>
+                        <button class="w-full tron-button font-bold py-2 px-4 rounded-lg mt-4">VIEW DETAILS</button>
+                    </div>
+                     <!-- Job 3 -->
+                    <div class="bg-black/70 rounded-lg p-5 tron-border flex flex-col justify-between hover:border-cyan-300 transition">
+                        <div>
+                            <h3 class="font-bold text-xl text-white text-glow">Directive: Courier</h3>
+                            <p class="text-sm text-cyan-400/70 mb-2">GRID LOCATION: North America</p>
+                            <span class="inline-block bg-cyan-500 text-black text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">THREAT: LOW</span>
+                            <p class="text-gray-300 mt-4">> Secure and transport information from a dead drop to a secure site. Evasive routing required.</p>
+                        </div>
+                        <button class="w-full tron-button font-bold py-2 px-4 rounded-lg mt-4">VIEW DETAILS</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Messages -->
+            <div id="messages" class="main-content">
+                <h2 class="text-3xl font-bold text-glow mb-6">SECURE CHANNEL</h2>
+                <div class="bg-black/70 rounded-lg tron-border flex h-[calc(100vh-12rem)]">
+                    <!-- Contact List -->
+                    <div class="w-1/3 border-r border-cyan-400/20 overflow-y-auto">
+                        <div class="p-3 border-b border-cyan-400/20">
+                            <input type="text" placeholder="Query agent database..." class="w-full bg-black/50 p-2 rounded-md text-sm placeholder-cyan-200/50 focus:outline-none focus:ring-1 ring-cyan-400">
+                        </div>
+                        <ul>
+                            <li class="p-4 bg-cyan-900/20 cursor-pointer border-l-4 border-cyan-400">
+                                <p class="font-bold text-white text-glow">CONTROL</p>
+                                <p class="text-sm text-cyan-400/70 truncate">> Roger that. Proceed as directed.</p>
+                            </li>
+                             <li class="p-4 hover:bg-cyan-900/20 cursor-pointer border-l-4 border-transparent">
+                                <p class="font-bold text-white">AGENT: GHOST</p>
+                                <p class="text-sm text-cyan-400/70 truncate">> The package is secure. I'm en route.</p>
+                            </li>
+                            <li class="p-4 hover:bg-cyan-900/20 cursor-pointer border-l-4 border-transparent">
+                                <p class="font-bold text-white">TECH OPS</p>
+                                <p class="text-sm text-cyan-400/70 truncate">> Your new directive is ready for sync.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Chat Window -->
+                    <div class="w-2/3 flex flex-col bg-black/50">
+                        <div class="p-4 border-b border-cyan-400/20 flex items-center">
+                            <img src="https://placehold.co/40x40/000000/FF003C?text=C" class="w-10 h-10 rounded-full mr-3" alt="Control Avatar" style="box-shadow: var(--tron-glow-red)">
+                            <h3 class="font-bold text-lg text-red-500 text-glow-red">CONTROL</h3>
+                        </div>
+                        <div class="flex-1 p-4 overflow-y-auto space-y-4">
+                            <!-- Received Message -->
+                            <div class="flex">
+                                <div class="bg-gray-800/50 p-3 rounded-lg max-w-md border border-cyan-400/30">
+                                    <p>> Your directive has been updated. Acknowledge.</p>
+                                    <p class="text-xs text-cyan-400/50 text-right mt-1">1432Z</p>
+                                </div>
+                            </div>
+                            <!-- Sent Message -->
+                            <div class="flex justify-end">
+                                <div class="bg-cyan-900/50 text-white p-3 rounded-lg max-w-md border border-cyan-400/80">
+                                    <p>> Acknowledged. Awaiting new intel.</p>
+                                    <p class="text-xs text-cyan-200/80 text-right mt-1">1435Z</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-cyan-400/20">
+                            <div class="flex items-center">
+                                <input type="text" placeholder="> Compose secure communication..." class="flex-1 bg-black/50 p-3 rounded-full focus:outline-none focus:ring-2 ring-cyan-400 placeholder-cyan-200/50">
+                                <button class="ml-3 p-3 bg-cyan-500 rounded-full hover:bg-cyan-400 transition" style="box-shadow: var(--tron-glow)">
+                                    <i data-lucide="send" class="w-5 h-5 text-black"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile -->
+            <div id="profile" class="main-content">
+                <h2 class="text-3xl font-bold text-glow mb-6">USER PROFILE</h2>
+                <div class="bg-black/70 rounded-lg p-8 tron-border">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <img src="https://placehold.co/128x128/000000/0AFFFF?text=X" alt="Agent Profile" class="w-32 h-32 rounded-full" style="box-shadow: 0 0 15px var(--tron-cyan), 0 0 25px var(--tron-cyan);">
+                        <div class="mt-6 md:mt-0 md:ml-8 text-center md:text-left">
+                            <h3 class="text-4xl font-bold text-white text-glow">AGENT: X</h3>
+                            <p class="text-cyan-400">CLASS: Field Operative | Clearance 4</p>
+                            <p class="mt-2 text-gray-400">STATUS: <span class="text-green-400 font-semibold" style="text-shadow: 0 0 5px #22c55e;">ONLINE</span></p>
+                        </div>
+                    </div>
+                    <div class="mt-10 border-t border-cyan-400/20 pt-6">
+                        <h4 class="text-xl font-semibold text-white text-glow mb-4">MARKERS</h4>
+                        <div class="flex flex-wrap gap-2">
+                           <span class="bg-cyan-900/50 px-3 py-1 rounded-full text-sm border border-cyan-400/30">Covert Ops</span>
+                           <span class="bg-cyan-900/50 px-3 py-1 rounded-full text-sm border border-cyan-400/30">Cryptography</span>
+                           <span class="bg-cyan-900/50 px-3 py-1 rounded-full text-sm border border-cyan-400/30">Combat</span>
+                           <span class="bg-cyan-900/50 px-3 py-1 rounded-full text-sm border border-cyan-400/30">Infiltration</span>
+                           <span class="bg-cyan-900/50 px-3 py-1 rounded-full text-sm border border-cyan-400/30">SIGINT</span>
+                        </div>
+                    </div>
+                     <div class="mt-8 border-t border-cyan-400/20 pt-6">
+                        <h4 class="text-xl font-semibold text-white text-glow mb-4">COMPLETED DIRECTIVES</h4>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-cyan-400"></i> Directive: Crimson Tide</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-cyan-400"></i> The Istanbul Gambit</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-cyan-400"></i> Directive: Whisperwind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mainContents = document.querySelectorAll('.main-content');
+
+            const switchTab = (targetId) => {
+                mainContents.forEach(content => content.classList.remove('active'));
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                const activeContent = document.querySelector(targetId);
+                const activeLink = document.querySelector(`a[href="${targetId}"]`);
+
+                if (activeContent) activeContent.classList.add('active');
+                if (activeLink) activeLink.classList.add('active');
+            }
+
+            const initialTab = window.location.hash || '#home';
+            switchTab(initialTab);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    history.pushState(null, null, targetId); 
+                    switchTab(targetId);
+                });
+            });
+
+            window.addEventListener('popstate', () => {
+                const targetId = window.location.hash || '#home';
+                switchTab(targetId);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
