@@ -12,3 +12,6 @@ Stardate 25.26.9
 
 Stardatr 25.29.9
     We worked together all of last week on our presentation. All of us contributed to building the slides overall, but I did the UI mockup and logo specifically. It was interesting working in a team dynamic with creating slides or doing anything creative, because choices in working together to build a good presentation feel a bit subjective at times. For me, it was less pleasant to use Figma and easier to actually build a mockup site, so for better or worse, that is what I did. It really helped me to fine tune our vision for the site, but I'm not sure how much we can use. My next step is to find out how to work with the front end using flask and what is already in the repo. 
+
+Stardate 25.3.10
+    We talked today about how the frontend in flask could work with templates and have translated some of the code for frontend templates using some help from AI. Our assignment is to create and organize our kanban board. We spoke in class about where we should begin, and we agreed that account creation/user login is probably the best place to start. We have a plan for what to put on our kanban board and how to fine tune our user stories to reflect what we are interested in working on.  
