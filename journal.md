@@ -15,3 +15,9 @@ Stardatr 25.29.9
 
 Stardate 25.3.10
     We talked today about how the frontend in flask could work with templates and have translated some of the code for frontend templates using some help from AI. Our assignment is to create and organize our kanban board. We spoke in class about where we should begin, and we agreed that account creation/user login is probably the best place to start. We have a plan for what to put on our kanban board and how to fine tune our user stories to reflect what we are interested in working on.  
+
+Stardate 25.8.10
+    I was the scrum master for this week. It is an interesting role, but I felt like I didn't have to do a whole lot. We were just getting started, but we did meet and discuss our tasks and where we were. It was difficult to separtate the time just checking in vs actually talking about our issues and getting into them. I imagine the scrum master really has to be good at directing the flow of the check in meetings. 
+
+Stardate 25.15.10
+    We are talking about ethics this week, and this is tricky! It's very interesting to think about the implications of AI and how the ethical element fits into it. I imagine its incredibly difficult to program or reconsile ethics in programming, especially when it coms to AI. I'm don't have any good answers or strong opinions about this particular subject because I don't feel like I'm informed enough to have a definative opinion. It definately is going to effect me in my lifetime though, and I'm interested to see where this discussion goes in the future. Something else to consider is that I'm guessing AI is definately being used right now for nefarious purposes behind closed doors, and there are no limiting laws in place to handle this, so I'm sure that will also become more robust in the future. 
