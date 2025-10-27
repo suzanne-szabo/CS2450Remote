@@ -21,3 +21,9 @@ Stardate 25.8.10
 
 Stardate 25.15.10
     We are talking about ethics this week, and this is tricky! It's very interesting to think about the implications of AI and how the ethical element fits into it. I imagine its incredibly difficult to program or reconsile ethics in programming, especially when it coms to AI. I'm don't have any good answers or strong opinions about this particular subject because I don't feel like I'm informed enough to have a definative opinion. It definately is going to effect me in my lifetime though, and I'm interested to see where this discussion goes in the future. Something else to consider is that I'm guessing AI is definately being used right now for nefarious purposes behind closed doors, and there are no limiting laws in place to handle this, so I'm sure that will also become more robust in the future. 
+
+Stardate 25.22.10
+    We are working on selenium testing this week. These seem really cool! I love the way this setup works. I can see it being very valuable on testing specific elements and testing basic real functionality. It was a little tricky to set up, but the testing seems like it can work through testing the code very very quickly for some simple functionality and behavior for the janky myspy site. I wish we had more ready to upload and test, but we arent' there yet. Hopefully we will move forward quicker in the upcoming week. 
+
+Stardate 25.27.10
+    This week is all about refactoring. We need to really work on getting a sprint set up for our team. We need to continue to update and adjust our kanban board and issues as well as really get the functionality we want finalized in issues as it comes up. I hope that we can get to a place where we even refactor the code for mySpy, but I'm not 100% confident we will get all the functionality we want, so refactoring may not make it on our adgenda. I really like the idea of being able to refactor, but time is running out. 
