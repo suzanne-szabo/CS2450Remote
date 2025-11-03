@@ -27,3 +27,6 @@ Stardate 25.22.10
 
 Stardate 25.27.10
     This week is all about refactoring. We need to really work on getting a sprint set up for our team. We need to continue to update and adjust our kanban board and issues as well as really get the functionality we want finalized in issues as it comes up. I hope that we can get to a place where we even refactor the code for mySpy, but I'm not 100% confident we will get all the functionality we want, so refactoring may not make it on our adgenda. I really like the idea of being able to refactor, but time is running out. 
+
+Stardate 25.11.3
+    This week we are working on deployment and pipeline integraton. I am excited to learn github actions. I have used github pages and using the actions for "auto" actions or updates seems like a great skill to have. Over the weekend, I was able to do the full integration with mySpy and supabase. I was able to get the login and create account functionality done, so yay! Now that the supabase connection is valid, I can now use AI to help rewrite handlers to make connections to the frontend templates. We are close to having a decently working product. Atleast now it is fully secure! 
