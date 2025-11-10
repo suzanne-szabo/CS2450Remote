@@ -30,3 +30,6 @@ Stardate 25.27.10
 
 Stardate 25.11.3
     This week we are working on deployment and pipeline integraton. I am excited to learn github actions. I have used github pages and using the actions for "auto" actions or updates seems like a great skill to have. Over the weekend, I was able to do the full integration with mySpy and supabase. I was able to get the login and create account functionality done, so yay! Now that the supabase connection is valid, I can now use AI to help rewrite handlers to make connections to the frontend templates. We are close to having a decently working product. Atleast now it is fully secure! 
+
+Stardate 25.11.10
+    Only about 2 weeks of working time left!! We are flying through the semester! We are talking aboout maintainance this week and I think we are going to talk about docker containers. I have always wanted to know how this works, so this is going to be a great learning experience. I'm sure this will be very valuable to me in the future. I am curious on the interaction of docker containers and apps using react native in particular, so I think I will do some research on that. We are continuing to work on mySpy and I hope we will be able to get our basic functionality done for posting, sending direct messages and adding friends. 
