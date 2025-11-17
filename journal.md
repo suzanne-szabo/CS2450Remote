@@ -33,3 +33,6 @@ Stardate 25.11.3
 
 Stardate 25.11.10
     Only about 2 weeks of working time left!! We are flying through the semester! We are talking aboout maintainance this week and I think we are going to talk about docker containers. I have always wanted to know how this works, so this is going to be a great learning experience. I'm sure this will be very valuable to me in the future. I am curious on the interaction of docker containers and apps using react native in particular, so I think I will do some research on that. We are continuing to work on mySpy and I hope we will be able to get our basic functionality done for posting, sending direct messages and adding friends. 
+
+Stardate 25.11.17
+    We only have about 1 more week to go! Woo Hoo! This week we are talking about maintainace and security as we wrap up the picture of the full software engineering process. For mySpy, we have a working version and the basic functionality looks like it is working well. I hope that we get all our details finished in time so that we are where we want to be by the time we need to do our presentation. I am super happy to learn about the security issues. I think that is one of my weakest areas as a programmer. I don't spend nearly enough time focusing on programming with security in mind. 
